@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Bank</title>
+    <style>
+        .header{
+            font-size: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 5px;
+            margin:10px;
+        }
+        .course_details{
+            font-size: 20px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo"><img src="D:\ITM\Sem 6\Information Extraction Workshop\Project\Project\UI\static\logo.jpg" alt="logo"></div>
+    <div class="header">ITM(SLS) Baroda University <br>
+        School of Computer Science, Engineering and Technology <br>
+        Semester VI
+        <h2>-: Question Bank :-</h2>
+    </div>
+    <div class="course_details">
+        <b>Course Name :</b> Data Structures And Algorithms
+        <br>
+        <b>Course Name :</b> C2620C1 
+        <br>
+        <b>Years :</b> {{selected_year}}
+        <br>
+        <b>Chapters :</b> 
+        {% for i in range(no_of_chapters-1) %}
+            {{selected_chapters[i]}} ,
+        {% endfor %}
+        {{selected_chapters[no_of_chapters-1]}}
+        <br>
+        <b>Total Questions :</b> {{no_of_questions}}
+    </div>
+    <div class="que_header">
+        <ul><li><h3>Questions :-</h3></li></ul>
+    </div>
+    <div class="questions">
+        <ol>
+            {% for i in range(questions|length) %}
+            <li>{{questions[i]}} <b>(Chapter : {{questions_chapters[i]}})</b></li>
+            {% endfor %}
+        </ol>
+    </div>
+</body>
+</html>
