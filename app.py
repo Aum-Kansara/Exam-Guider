@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request,send_from_directory,current_app
 from pdfBuilder import generatePDF
 import os
-from pandas import read_pickle
+from pickle import load
 
 app=Flask(__name__)
 app.config["UPLOAD_FOLDER"]='static/pdfs'
@@ -10,7 +10,7 @@ years=['2018', '2019', '2020', '2021', '2022']
 chapters_list=["Introduction To Data Structure","Linear Data Struture","NonLinear Data Structure","Hashing And File Structure","Sorting & Searching"]
 
 def loadQuestionsDF():
-    questions_df=read_pickle("dsa_questions_df.pkl")
+    questions_df=load(open("dsa_questions_df.pkl",'rb'))
     return questions_df
 
 questions_df=loadQuestionsDF()
