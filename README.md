@@ -3,4 +3,4 @@
 ### Classified Questions which are Extracted from exam paper's pdf (programmatically)
 ### Video Demo : https://drive.google.com/file/d/1Wz7bhQv7kcvwwsPfdMmjF3kxcrs3pxcm/view?usp=drive_link
 ### Output Demo Video :
-![Output(Output.png]
+![Output](Output.png)
