@@ -3,7 +3,6 @@ import pdfkit
 from os import remove
 
 
-
 template_loader = jinja2.FileSystemLoader('./static')
 template_env = jinja2.Environment(loader=template_loader)
 
@@ -13,7 +12,7 @@ template = template_env.get_template('question_bank_template.html')
 def generatePDF(pdf_name,selected_year,selected_chapters,no_of_questions,questions,no_of_chapters,questions_chapters):
     context = {'selected_year':selected_year,"selected_chapters":selected_chapters,"no_of_questions":no_of_questions,"questions":questions,"no_of_chapters":no_of_chapters,"questions_chapters":questions_chapters}
     output_text = template.render(context)
-    config = pdfkit.configuration(wkhtmltopdf="C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
+    config = pdfkit.configuration(wkhtmltopdf="/usr/local/bin/wkhtmltopdf")
     pdfkit.from_string(output_text, pdf_name, configuration=config, css='basic_style.css',options={"enable-local-file-access": None})
     with open(pdf_name,'rb') as f:
         with open(f'static/pdfs/{pdf_name}','wb') as f1:

@@ -23,7 +23,7 @@ def getQuestionFromChapters(chapters,no_of_questions,selected_year):
     df=questions_df
     if selected_year:
         df=questions_df.loc[questions_df['Year']==selected_year]
-        print(df)
+        # print(df)
 
     for chapter in chapters:
         selected_ques=df.loc[df['Chapter Titles']==chapters_list[int(chapter)-1]]['Question'].values.tolist()
