@@ -31,7 +31,7 @@ function removeChapterFromList(chapter_no){
 }
 
 function selectAllChapters(){
-    for(var i=1;i<9;i++){
+    for(var i=1;i<6;i++){
         addSelectedChapter(i);
         if(isNoChapters){
             isNoChapters=false;
